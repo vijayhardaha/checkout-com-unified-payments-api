@@ -1,5 +1,5 @@
 {
-  "name": "checkout-com-unified-payments-api",
+  "name": "wc-checkout-com-gateway",
   "pluginName": "Checkout.com Payment Gateway",
   "version": "4.3.5",
   "description": "Extends WooCommerce by Adding the Checkout.com Gateway.",
