@@ -1,0 +1,14 @@
+{
+  "dependencies": {
+    "checkoutcom-styles.css": { "files": ["css/checkoutcom-styles.scss"] },
+    "multi-iframe.css": { "files": ["css/multi-iframe.scss"] },
+    "normalize.css": { "files": ["css/normalize.scss"] },
+    "style.css": { "files": ["css/style.scss"] },
+    "cko-frames-integration.js": { "files": ["js/cko-frames-integration.js"] },
+    "klarna.js": { "files": ["js/klarna.js"] }
+  },
+  "paths": {
+    "source": "src/",
+    "dist": "assets/"
+  }
+}

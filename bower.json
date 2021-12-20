@@ -1,0 +1,18 @@
+{
+  "name": "checkout-com-unified-payments-api",
+  "description": "Extends WooCommerce by Adding the Checkout.com Gateway.",
+  "main": "gulpfile.js",
+  "authors": [
+    "Vijay Hardaha <https://twitter.com/vijayhardaha>"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/vijayhardaha/checkout-com-unified-payments-api",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
