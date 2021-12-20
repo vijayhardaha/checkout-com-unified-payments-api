@@ -1,17 +1,22 @@
 <?php
-/*
-Plugin Name: Checkout.com Payment Gateway
-Plugin URI: https://www.checkout.com/
-Description: Extends WooCommerce by Adding the Checkout.com Gateway.
-Version: 4.3.5
-Author: Checkout.com
-Author URI: https://www.checkout.com/
-Requires at least: 4.0
-Stable tag: 4.3.5
-Tested up to: 5.8
-
-WC tested up to: 5.4.2
-*/
+/**
+ * Plugin Name: Checkout.com Payment Gateway
+ * Plugin URI: https://www.checkout.com/
+ * Description: Extends WooCommerce by Adding the Checkout.com Gateway.
+ * Version: 4.3.5
+ * Author: Checkout.com
+ * Author URI: https://www.checkout.com/
+ * Text Domain: wc-checkout-com-gateway
+ * Domain Path: /languages/
+ * Requires at least: 4.3.5
+ * Requires PHP: 5.6
+ * Tested up to: 5.8
+ * WC tested up to: 5.4.2
+ * License: GNU General Public License v2 or later
+ * License URI: http://www.gnu.org/licenses/gpl-2.0.html
+ *
+ * @package WC_Checkoutcom_Payment_Gateway
+ */
 
 /*
  * This action hook registers our PHP class as a WooCommerce payment gateway
@@ -238,16 +243,14 @@ function action_woocommerce_order_item_add_action_buttons( $order ) {
 
 	if ( $order->get_payment_method() == 'wc_checkout_com_cards'
 		|| $order->get_payment_method() == 'wc_checkout_com_google_pay' ) {
-
 		?>
-<input type="hidden" value="" name="cko_payment_action" id="cko_payment_action" />
-<button class="button" id="cko-capture" style="display:none;">Capture</button>
-<button class="button" id="cko-void" style="display:none;">Void</button>
+		<input type="hidden" value="" name="cko_payment_action" id="cko_payment_action" />
+		<button class="button" id="cko-capture" style="display:none;">Capture</button>
+		<button class="button" id="cko-void" style="display:none;">Void</button>
 		<?php
-	}
 
-	wc_enqueue_js(
-		"
+		wc_enqueue_js(
+			"
             jQuery( function(){
                 setTimeout(function(){
 
@@ -281,7 +284,8 @@ function action_woocommerce_order_item_add_action_buttons( $order ) {
                 }, 1500);
             });
         "
-	);
+		);
+	}
 };
 
 /*
@@ -434,7 +438,5 @@ function cko_gateway_icon( $icons, $id ) {
 add_action( 'woocommerce_scheduled_subscription_payment_wc_checkout_com_cards', 'subscriptionPayment', 10, 2 );
 function subscriptionPayment( $renewal_total, $renewal_order ) {
 	include_once 'includes/subscription/class-wc-checkout-com-subscription.php';
-
 	WC_Checkoutcom_Subscription::renewal_payment( $renewal_total, $renewal_order );
-
 }
